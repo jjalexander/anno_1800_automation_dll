@@ -1,0 +1,33 @@
+[package]
+name = "anno_1800_automation"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+name = "anno_1800_automation_dll"
+path = "src/lib.rs"
+
+
+[[bin]]
+name = "anno_1800_automation"
+path = "src/main.rs"
+
+[dependencies]
+ctor = "0.2.8"
+dll-syringe = '0.15.2'
+eframe = "0.29.1"
+egui = "0.29.1"
+eyre = "0.6.12"
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+winapi = { version = '0.3.9', features = [
+    'minwindef',
+    'winnt',
+    'handleapi',
+    'processthreadsapi',
+    'consoleapi',
+    'errhandlingapi',
+    'processenv',
+    'fileapi',
+] }
